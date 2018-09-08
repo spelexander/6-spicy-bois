@@ -50,7 +50,6 @@ class Chart extends React.Component {
   render() {
     return (
       <div>
-        <h1>Six Spicy Boys</h1>
         <div className="Chart"></div>
         <SankeyChart nodes={this.state.nodes} links={this.state.links} openModal={this.openModal}/>
       </div>
