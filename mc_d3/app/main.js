@@ -26,7 +26,11 @@ var updateRadio = function() {
       break;
     case 'chart2':
       document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart1').style.display = 'none';
+      document.getElementById('chart2').style.display = 'none';
+      break;
+    case 'chart3':
+      document.getElementById(chartSelected).style.display = 'block';
+      document.getElementById('chart2').style.display = 'none';
       break;
   }
 }
@@ -43,7 +47,12 @@ ReactDOM.render(
     <Chart
     data={sampleData2}
     domain={sampleDomain} />
-  , document.getElementById("chart2"));
+    , document.getElementById("chart2"));
+
+ReactDOM.render(
+
+    <Surface />
+   , document.getElementById("chart3"));
 
 
 
