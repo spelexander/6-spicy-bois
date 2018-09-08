@@ -9,7 +9,7 @@ class Surface extends React.Component {
   componentDidMount() {
     console.log("componentDidMount");
     // Get the DOMElement that would be used to insert the chart
-    var el = ReactDOM.findDOMNode(this).getElementsByClassName('chart2')[0];
+    var el = ReactDOM.findDOMNode(this).getElementsByClassName('chart3')[0];
 
     Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv', function(err, rows){
         function unpack(rows, key) {
@@ -67,8 +67,6 @@ class Surface extends React.Component {
 }
 
 Surface.propTypes = {
-    // data: React.PropTypes.array,
-    // domain: React.PropTypes.object
 };
 
 export default Surface;

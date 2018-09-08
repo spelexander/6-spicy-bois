@@ -2,6 +2,7 @@ import './index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './chart.jsx';
+import Surface from './surface.jsx';
 import Sankey from './sankey.jsx';
 import './styles.css'
 import './base-theme.css'
@@ -23,15 +24,15 @@ var updateRadio = function() {
   switch(chartSelected){
     case 'chart1':
       document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart2').style.display = 'none';
+      // document.getElementById('chart2').style.display = 'none';
       break;
     case 'chart2':
       document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart2').style.display = 'none';
+      // document.getElementById('chart2').style.display = 'none';
       break;
     case 'chart3':
       document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart2').style.display = 'none';
+      // document.getElementById('chart2').style.display = 'none';
       break;
   }
 }
@@ -41,7 +42,7 @@ ReactDOM.render(
     <Chart
     data={sampleData1}
     domain={sampleDomain} />
-  , document.getElementById("chart1"));
+    , document.getElementById("chart1"));
 
 ReactDOM.render(
 
@@ -51,7 +52,7 @@ ReactDOM.render(
 ReactDOM.render(
 
     <Surface />
-   , document.getElementById("chart3"));
+    , document.getElementById("chart3"));
 
 
 
