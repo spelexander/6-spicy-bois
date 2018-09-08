@@ -1,3 +1,8 @@
+var fs = require('fs');
+
+var data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+consol.console.log(data);
+
 var configSankey = {
     margin: { top: 10, left: 10, right: 10, bottom: 10 },
     nodes: {
@@ -22,4 +27,4 @@ var configSankey = {
     }
 }
 
-var objSankey = sk.createSankey('#chart', configSankey, energyjson);
+var objSankey = sk.createSankey('#chart', configSankey, data);
