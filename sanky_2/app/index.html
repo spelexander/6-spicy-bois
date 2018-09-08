@@ -18,7 +18,7 @@
 						<ul>
 						  <li>
 							  <input type='radio' name='chart-selector' id='rb-999' value='headertext'  disabled/>
-							  <i><label for='rb-999' style="color:#c45007;">Six Spicy Boiz</label></i>
+							  <i><label for='rb-999' style="color:orange;">Six Spicy Boiz</label></i>
 							</li>
 						  <li>
 							<input type='radio' name='chart-selector' id='rb-1' value='chart1' checked />
@@ -38,8 +38,20 @@
 				  </header>
 
 				  <div id="charts">
-						<div id="chart1"></div>
+						<div id="chart1"/>
+						<script src="https://unpkg.com/d3@4.10.2"></script>
+						<script src="../build/sk.d3.min.js"></script>
+						<link rel="stylesheet" type="text/css" href="../build/sk.d3.min.css" />
+						<script type="text/javascript" src="data.json"></script>
+						<style>
+							#chart {
+								height: 900px;
+								width: 1500px;
+							}
+						</style>
+						<script src="sankyChart.js">></script>
 						<div id="chart2"></div>
+
 						<div id="chart3"></div>
 					</div>
 
