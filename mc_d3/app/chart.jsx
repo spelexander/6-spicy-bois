@@ -37,7 +37,6 @@ class Chart extends React.Component {
   render() {
     return (
       <div>
-        <h1>Six Spicy Boys</h1>
         <div className="Chart"></div>
       </div>
     )

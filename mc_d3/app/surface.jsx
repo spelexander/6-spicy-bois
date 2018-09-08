@@ -59,7 +59,6 @@ class Surface extends React.Component {
   render() {
     return (
       <div>
-        <h1>Six Spicy Boys</h1>
         <div className="Surface"></div>
       </div>
     )

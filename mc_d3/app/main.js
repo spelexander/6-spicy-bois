@@ -35,6 +35,8 @@ var updateRadio = function() {
   document.getElementById(chartSelected).style.display = 'block';
 }
 
+//RENDER CHARTS======================
+
 ReactDOM.render(
 
     <Chart
@@ -52,6 +54,9 @@ ReactDOM.render(
     <Surface />
     , document.getElementById("chart3"));
 
+//====================================
 
+
+updateRadio()
 
 d3.select('#chart-selector-container').on('change', updateRadio);
