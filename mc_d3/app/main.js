@@ -2,6 +2,8 @@ import './index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './chart.jsx';
+import './styles.css'
+import './base-theme.css'
 import d3 from 'd3';
 
 var sampleData1 = [
