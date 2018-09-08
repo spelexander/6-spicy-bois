@@ -2,6 +2,7 @@ import './index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './chart.jsx';
+import Sankey from './sankey.jsx';
 import './styles.css'
 import './base-theme.css'
 import d3 from 'd3';
@@ -38,10 +39,8 @@ ReactDOM.render(
 
 ReactDOM.render(
 
-    <Chart
-    data={sampleData2}
-    domain={sampleDomain} />
-    , document.getElementById("chart2"));
+  <Sankey />
+  , document.getElementById("chart2"));
 
 ReactDOM.render(
 

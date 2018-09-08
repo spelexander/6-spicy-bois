@@ -10,7 +10,7 @@ export default class extends React.Component {
     super()
 
     this.state = {
-      nodes: [], 
+      nodes: [],
       links: []
     };
   }
@@ -59,6 +59,8 @@ export default class extends React.Component {
     // ========================================================================
     var svgNode = ReactFauxDOM.createElement('div');
 
+
+
     var svg = d3.select(svgNode).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -92,21 +94,40 @@ export default class extends React.Component {
 
     // add nodes rect
     node.append("rect")
-      .attr("height", (d) => d.dy)
-      .attr("width", sankey.nodeWidth())
-      .append("title")
-      .text((d) => d.name + "\n" + format(d.value));
+        .attr("height", function(d) {
+            return (d.y1 - d.y0);
+        })
+        .attr("width", sankey.nodeWidth())
+        .style("fill", function(d) {
+            return d.color;
+        })
+        .style("stroke", function(d) {
+            return d3.rgb(d.color).darker(1.8);
+        });
 
     // add nodes text
     node.append("text")
-      .attr("x", -6)
-      .attr("y", (d) => d.dy / 2)
-      .attr("dy", ".35em")
-      .attr("text-anchor", "end")
-      .text((d) => d.name)
-      .filter((d) => d.x < width / 2)
-      .attr("x", 6 + sankey.nodeWidth())
-      .attr("text-anchor", "start");
+        .attr("x", -6)
+        .attr("y", function(d) {
+            return (d.y1 - d.y0) / 2;
+        })
+        .attr("dy", ".35em")
+        .attr("text-anchor", "end")
+        .attr("transform", null)
+        .style("fill", function(d) {
+            return d3.rgb(d.color).darker(2.4);
+        })
+        .text(function(d) {
+            return d.name;
+        })
+        .style("font-size", function(d) {
+            return _getFontSize(d) + "px";
+        })
+        .filter(function(d) {
+            return d.x0 < dimensions.width / 2;
+        })
+        .attr("x", 6 + sankey.nodeWidth())
+        .attr("text-anchor", "start");
 
     // Above D3 manipaluation equal to following jsx if didn't rely on faux-dom
     // ------------------------------------------------------------------------
