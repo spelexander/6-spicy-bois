@@ -17,22 +17,16 @@ var sampleData2= [
 var sampleDomain = {x: [0, 30], y: [0, 100]};
 
 var updateRadio = function() {
+  //find out which was selected
   var chartSelected = document.querySelector('input[name=chart-selector]:checked', '#chart-selector').value; 
   console.log('chartSelected:', chartSelected);
-  switch(chartSelected){
-    case 'chart1':
-      document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart2').style.display = 'none';
-      break;
-    case 'chart2':
-      document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart2').style.display = 'none';
-      break;
-    case 'chart3':
-      document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart2').style.display = 'none';
-      break;
-  }
+  
+  //turn all off
+  document.getElementById('chart-selector-container').childNodes.display = 'none';
+
+  //turn selected on
+  document.getElementById(chartSelected).style.display = 'block';
+
 }
 
 ReactDOM.render(
