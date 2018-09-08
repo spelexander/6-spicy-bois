@@ -2,6 +2,7 @@ import './index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './chart.jsx';
+import Sankey from './sankey.jsx';
 import d3 from 'd3';
 
 var sampleData1 = [
@@ -15,7 +16,7 @@ var sampleData2= [
 var sampleDomain = {x: [0, 30], y: [0, 100]};
 
 var updateRadio = function() {
-  var chartSelected = document.querySelector('input[name=chart-selector]:checked', '#chart-selector').value; 
+  var chartSelected = document.querySelector('input[name=chart-selector]:checked', '#chart-selector').value;
   console.log('chartSelected:', chartSelected);
   switch(chartSelected){
     case 'chart1':
@@ -38,9 +39,7 @@ ReactDOM.render(
 
 ReactDOM.render(
 
-    <Chart
-    data={sampleData2}
-    domain={sampleDomain} />
+  <Sankey />
   , document.getElementById("chart2"));
 
 
