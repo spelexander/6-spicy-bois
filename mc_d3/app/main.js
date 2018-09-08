@@ -21,14 +21,18 @@ var sampleDomain = {x: [0, 30], y: [0, 100]};
 var updateRadio = function() {
   //find out which was selected
   var chartSelected = document.querySelector('input[name=chart-selector]:checked', '#chart-selector').value; 
-  console.log('chartSelected:', chartSelected);
   
   //turn all off
-  document.getElementById('chart-selector-container').childNodes.display = 'none';
+  var charts = document.getElementById('charts').childNodes;
+  var chartsArray = Array.prototype.slice.call(charts);
+  chartsArray.forEach(element => {
+    if(element.tagName == "DIV"){
+      element.style.display = 'none';
+    }
+  });
 
   //turn selected on
   document.getElementById(chartSelected).style.display = 'block';
-
 }
 
 ReactDOM.render(
