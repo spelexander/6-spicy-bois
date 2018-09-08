@@ -1,11 +1,15 @@
-form#chart-selector-container input[type=radio] {
-    color:red;
-    background: red;
-}
+/*
+burnt orange:           c45007
+registration black:     000000
+outer space (grey):     474747
+light cornflowerblue:   98d2eb
+light cyan:             e1f2fe
+*/
 
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background: #e1f2fe;
 }
 
 
@@ -25,6 +29,6 @@ form#chart-selector-container label {
     padding:15px;
 }
 form#chart-selector-container input:checked + label {
-    background: #333333;
-    color:white;
+    background: #474747;
+    color:#e1f2fe;
 }
