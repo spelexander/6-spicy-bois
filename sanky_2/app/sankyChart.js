@@ -1,8 +1,7 @@
 
 // Reads sanky data
-var json = JSON.parse(data);
-consol.console.log(data);
-
+console.log(energyjson);
+console.log("You done goof'd");
 var configSankey = {
     margin: { top: 10, left: 10, right: 10, bottom: 10 },
     nodes: {
@@ -27,4 +26,4 @@ var configSankey = {
     }
 }
 
-var objSankey = sk.createSankey('#chart1', configSankey, json);
+var objSankey = sk.createSankey('#chart1', configSankey, energyjson);
