@@ -40,7 +40,7 @@ ReactDOM.render(
     <Chart
     data={sampleData1}
     domain={sampleDomain} />
-  , document.getElementById("chart1"));
+    , document.getElementById("chart1"));
 
 // ReactDOM.render(
 
@@ -50,7 +50,7 @@ ReactDOM.render(
 ReactDOM.render(
 
     <Surface />
-   , document.getElementById("chart3"));
+    , document.getElementById("chart3"));
 
 
 
