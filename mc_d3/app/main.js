@@ -2,7 +2,6 @@ import './index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './chart.jsx';
-import Surface from './surface.jsx';
 import Sankey from './sankey.jsx';
 import Surface from './surface.jsx'
 import './styles.css'
