@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './chart.jsx';
 import Sankey from './sankey.jsx';
+import Surface from './surface.jsx'
 import './styles.css'
 import './base-theme.css'
 import d3 from 'd3';
