@@ -26,7 +26,7 @@ class Sankey extends React.Component {
   }
 
   componentDidUpdate() {
-    var el = this.getDOMNode();
+  var el = ReactDOM.findDOMNode(this).getElementsByClassName('Sankey')[0];
   }
 
   getChartState() {
