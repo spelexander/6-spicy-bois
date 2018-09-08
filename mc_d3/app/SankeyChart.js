@@ -30,7 +30,7 @@ export default class extends React.Component {
     // ========================================================================
     var margin = { top: 10, right: 10, bottom: 10, left: 10 };
     var width = 1500 - margin.left - margin.right;
-    var height = 1200 - margin.top - margin.bottom;
+    var height = 900 - margin.top - margin.bottom;
 
     var format = (d) => formatNumber(d);
     var formatNumber = d3.format(",.0f"); // zero decimal places
