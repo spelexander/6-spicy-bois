@@ -23,6 +23,14 @@ export default class extends React.Component {
     });
   }
 
+  getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
   render() {
     // ========================================================================
@@ -43,6 +51,14 @@ export default class extends React.Component {
       .nodeWidth(15)
       .nodePadding(10);
 
+    //Colors
+    //set color in nodes, case not exists
+    for (var i = 0; i < this.state.nodes; i++) {
+        if (this.state.nodes[i].color == undefined) {
+          this.state.nodes[i].color = getRandomColor();
+        }
+    }
+
     var path = sankey.link();
 
     var graph = {
@@ -58,8 +74,6 @@ export default class extends React.Component {
     // Initialize and append the svg canvas to faux-DOM
     // ========================================================================
     var svgNode = ReactFauxDOM.createElement('div');
-
-
 
     var svg = d3.select(svgNode).append("svg")
       .attr("width", width + margin.left + margin.right)
