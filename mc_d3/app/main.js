@@ -37,10 +37,10 @@ ReactDOM.render(
     domain={sampleDomain} />
   , document.getElementById("chart1"));
 
-ReactDOM.render(
+// ReactDOM.render(
 
-  <Sankey />
-  , document.getElementById("chart2"));
+//   <Sankey />
+//   , document.getElementById("chart2"));
 
 ReactDOM.render(
 
