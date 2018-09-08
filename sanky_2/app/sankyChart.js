@@ -1,7 +1,7 @@
 
 // Reads sanky data
-console.log(energyjson);
-console.log("You done goof'd");
+//console.log(energyjson);
+//console.log("You done goof'd");
 var configSankey = {
     margin: { top: 10, left: 10, right: 10, bottom: 10 },
     nodes: {
