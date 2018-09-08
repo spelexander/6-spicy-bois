@@ -1,8 +1,10 @@
 {
   "name": "react-d3-starter",
+  "proxy": "http://localhost:5000/",
   "version": "1.0.0",
   "description": "A starter project aimed for data visualization with React and D3",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
@@ -25,7 +27,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "d3": "^3.5.13",
+    "bootstrap": "^3.3.6",
+    "d3": "^3.5.3",
+    "d3-plugins-sankey": "^1.2.1",
+    "lodash": "^3.10.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   }

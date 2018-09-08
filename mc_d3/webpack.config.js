@@ -1,11 +1,26 @@
 var path = require('path');
 
 module.exports = {
-    entry: [
-      'webpack/hot/dev-server',
-      'webpack-dev-server/client?http://localhost:8080',
-      path.resolve(__dirname, 'app/main.js')
-    ],
+  entry: [
+    'webpack/hot/dev-server',
+
+    path.resolve(__dirname, 'app/main.js')
+  ],
+  headers: {
+    "Access-Control-Allow-Origin": "*"
+  },
+  disableHostCheck: true,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+  },
+  proxy: {
+      "/api":{
+        target:"http://localhost:5000/",
+        secure:"false",
+        crossOrigin:"true"
+      }
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
@@ -24,5 +39,5 @@ module.exports = {
       }, {
         test: /\.css$/, loader: 'style!css'
       }]
-    }
+    },
 };

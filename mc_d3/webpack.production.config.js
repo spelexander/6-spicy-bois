@@ -7,6 +7,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  proxy: {
+  "/api/*":{
+      target:"http://localhost:5000/",
+      secure:"false"
+  }
+  },
   module: {
     loaders: [{
       test: /\.jsx?$/,
