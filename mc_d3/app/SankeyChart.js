@@ -28,9 +28,9 @@ export default class extends React.Component {
     // ========================================================================
     // Set units, margin, sizes
     // ========================================================================
-    var margin = { top: 10, right: 0, bottom: 10, left: 0 };
-    var width = 690 - margin.left - margin.right;
-    var height = 400 - margin.top - margin.bottom;
+    var margin = { top: 10, right: 10, bottom: 10, left: 10 };
+    var width = 1500 - margin.left - margin.right;
+    var height = 1200 - margin.top - margin.bottom;
 
     var format = (d) => formatNumber(d);
     var formatNumber = d3.format(",.0f"); // zero decimal places
@@ -94,40 +94,21 @@ export default class extends React.Component {
 
     // add nodes rect
     node.append("rect")
-        .attr("height", function(d) {
-            return (d.y1 - d.y0);
-        })
-        .attr("width", sankey.nodeWidth())
-        .style("fill", function(d) {
-            return d.color;
-        })
-        .style("stroke", function(d) {
-            return d3.rgb(d.color).darker(1.8);
-        });
+      .attr("height", (d) => d.dy)
+      .attr("width", sankey.nodeWidth())
+      .append("title")
+      .text((d) => d.name + "\n" + format(d.value));
 
     // add nodes text
     node.append("text")
-        .attr("x", -6)
-        .attr("y", function(d) {
-            return (d.y1 - d.y0) / 2;
-        })
-        .attr("dy", ".35em")
-        .attr("text-anchor", "end")
-        .attr("transform", null)
-        .style("fill", function(d) {
-            return d3.rgb(d.color).darker(2.4);
-        })
-        .text(function(d) {
-            return d.name;
-        })
-        .style("font-size", function(d) {
-            return _getFontSize(d) + "px";
-        })
-        .filter(function(d) {
-            return d.x0 < dimensions.width / 2;
-        })
-        .attr("x", 6 + sankey.nodeWidth())
-        .attr("text-anchor", "start");
+      .attr("x", -6)
+      .attr("y", (d) => d.dy / 2)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "end")
+      .text((d) => d.name)
+      .filter((d) => d.x < width / 2)
+      .attr("x", 6 + sankey.nodeWidth())
+      .attr("text-anchor", "start");
 
     // Above D3 manipaluation equal to following jsx if didn't rely on faux-dom
     // ------------------------------------------------------------------------
