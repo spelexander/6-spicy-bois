@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import d3Circle from './d3_circle.js';
 
 class Surface extends React.Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class Surface extends React.Component {
   componentDidMount() {
     console.log("componentDidMount");
     // Get the DOMElement that would be used to insert the chart
-    var el = ReactDOM.findDOMNode(this).getElementsByClassName('Surface')[0];
+    var el = ReactDOM.findDOMNode(this).getElementsByClassName('chart2')[0];
 
     Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv', function(err, rows){
         function unpack(rows, key) {

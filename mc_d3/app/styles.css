@@ -1,0 +1,30 @@
+form#chart-selector-container input[type=radio] {
+    color:red;
+    background: red;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+form#chart-selector-container ul {
+    list-style: none;
+}
+form#chart-selector-container li {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top:10px;
+}
+form#chart-selector-container input {
+    visibility:hidden;
+}
+form#chart-selector-container label {
+    cursor: pointer;
+    padding:15px;
+}
+form#chart-selector-container input:checked + label {
+    background: #333333;
+    color:white;
+}

@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Chart from './chart.jsx';
 import Sankey from './sankey.jsx';
+import './styles.css'
+import './base-theme.css'
 import d3 from 'd3';
 
 var sampleData1 = [
@@ -25,7 +27,11 @@ var updateRadio = function() {
       break;
     case 'chart2':
       document.getElementById(chartSelected).style.display = 'block';
-      document.getElementById('chart1').style.display = 'none';
+      document.getElementById('chart2').style.display = 'none';
+      break;
+    case 'chart3':
+      document.getElementById(chartSelected).style.display = 'block';
+      document.getElementById('chart2').style.display = 'none';
       break;
   }
 }
@@ -41,6 +47,11 @@ ReactDOM.render(
 
   <Sankey />
   , document.getElementById("chart2"));
+
+ReactDOM.render(
+
+    <Surface />
+   , document.getElementById("chart3"));
 
 
 
