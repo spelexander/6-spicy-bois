@@ -11,14 +11,16 @@ var b = {
 };
 
 // Mapping of step names to colors.
-var colors = {
-  "home": "#5687d1",
-  "product": "#7b615c",
-  "search": "#de783b",
-  "account": "#6ab975",
-  "other": "#a173d1",
-  "end": "#bbbbbb"
-};
+// var colors = {
+//   "home": "#5687d1",
+//   "product": "#7b615c",
+//   "search": "#de783b",
+//   "account": "#6ab975",
+//   "other": "#a173d1",
+//   "end": "#bbbbbb"
+// };
+
+var fillColor = "#c45007"
 
 // Total size of all segments; we set this later, after loading the data.
 var totalSize = 0; 
@@ -82,7 +84,8 @@ function createVisualization(json) {
       .attr("display", function(d) { return d.depth ? null : "none"; })
       .attr("d", arc)
       .attr("fill-rule", "evenodd")
-      .style("fill", function(d) { return colors[d.data.name]; })
+      //.style("fill", function(d) { return colors[d.data.name]; })
+      .style("fill", fillColor)
       .style("opacity", 1)
       .on("mouseover", mouseover);
 
@@ -189,7 +192,8 @@ function updateBreadcrumbs(nodeArray, percentageString) {
 
   entering.append("svg:polygon")
       .attr("points", breadcrumbPoints)
-      .style("fill", function(d) { return colors[d.data.name]; });
+      //.style("fill", function(d) { return colors[d.data.name]; });
+      .style("fill", fillColor);
 
   entering.append("svg:text")
       .attr("x", (b.w + b.t) / 2)
@@ -226,10 +230,12 @@ function drawLegend() {
 
   var legend = d3.select("#legend").append("svg:svg")
       .attr("width", li.w)
-      .attr("height", d3.keys(colors).length * (li.h + li.s));
+      //.attr("height", d3.keys(colors).length * (li.h + li.s));
+      .attr("height", d3.keys(fillColor).length * (li.h + li.s));
 
   var g = legend.selectAll("g")
-      .data(d3.entries(colors))
+      //.data(d3.entries(colors))
+      .data(fillColor)
       .enter().append("svg:g")
       .attr("transform", function(d, i) {
               return "translate(0," + i * (li.h + li.s) + ")";
