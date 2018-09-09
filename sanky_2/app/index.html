@@ -37,23 +37,31 @@
 					</div>
 				  </header>
 
+				  <!--DATA SOURCES:-->
+				  <script src="data_education_to_allowance.js"></script>
+				  <script src="data_flare.js"></script>
+				  <script src="data_energyjson.js"></script>
+
+
+
+
 				  <div id="charts">
 						<div id="chart1"></div>
 
 						<script src="https://unpkg.com/d3@4.10.2"></script>
 						<script src="../build/sk.d3.min.js"></script>
 						<link rel="stylesheet" type="text/css" href="../build/sk.d3.min.css" />
-						<script src="data_energyjson.js"></script>
+						
 						<style>
 							#chart1 {
 								height: 800px;
 								width: 1400px;
 							}
 						</style>
-						<script src="sankyChart.js"></script>
+
 
 						<div id="chart2">
-								<script src="data_flare.js"></script>
+
 								<div id="sequence"></div>
 								  <div id="chart-sunburst">
 									<div id="explanation" style="visibility: hidden;">
@@ -64,8 +72,20 @@
 						</div>
 						<script type="text/javascript" src="sunburst.js"></script>
 
-						<div id="chart3"></div>
+						<div id="chart3">
+
+								<!--educationjson-->
+								<style>
+										#chart3 {
+											height: 800px;
+											width: 1400px;
+										}
+									</style>
+
+						</div>
 					</div>
+
+					<script src="sankyChart.js"></script>
 
 		<script src="https://unpkg.com/d3@4.10.2"></script>
 		<script src="../build/sk.d3.min.js"></script>

@@ -1,4 +1,4 @@
-console.log(flarejson)
+//console.log(flarejson)
 
 // Dimensions of sunburst.
 var width = 750;
