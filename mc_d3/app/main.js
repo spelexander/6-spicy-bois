@@ -49,10 +49,6 @@ ReactDOM.render(
   <Sankey />
   , document.getElementById("chart2"));
 
-ReactDOM.render(
-
-    <Surface />
-    , document.getElementById("chart3"));
 
 //====================================
 
